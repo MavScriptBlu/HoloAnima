@@ -1,108 +1,49 @@
-# Pixel Boof
-Welcome to Pixel Boof! This application transforms your webcam photos into unique, retro video game-inspired characters using the power of generative AI. Step into the booth, strike a pose, and see yourself reimagined in the style of your favorite classic games.
-Originally named Pixel Booth, but due to Big-Money-Makers taking the fun outta everything, it was renamed and re-imagined as Pixel Boof
+# HoloAnima ✨
+
+Welcome to **HoloAnima**! This application transforms your webcam photos into unique, anthropomorphic animal stickers with a vibrant holographic aesthetic. Using the power of generative AI, HoloAnima syncs your features with your digital spirit animal, creating high-quality, iridescent digital collectibles.
 
 ## 🚀 Overview
-Pixel Boof is an interactive web application that captures images from your webcam, applies a selected artistic style via a generative AI model, and presents you with a unique, stylized portrait. Whether you want to see yourself as an 8-bit hero, a fighter from a classic arcade game, or a character from a fantasy RPG, Pixel Boof makes it happen in a few clicks.
+HoloAnima is an interactive web experience that captures your portrait, analyzes your style, and reimagers you as a stylized animal character—complete with a glowing holographic foil border. Whether you choose a specific animal or let the AI decide your "Auto-Detect" match, every creation is an isolated digital sticker ready for sharing or printing.
 
 ## ✨ Features
-- **Live Camera Preview**: See a real-time feed from your webcam.
-
-- **Digital Zoom**: Use the slider (desktop) or pinch-to-zoom (mobile) to frame your perfect shot.
-
-- **Retro Video Game Styles**: Choose from a wide array of modes, each with a unique prompt to transform your photo into a character inspired by games you grew up with.
-
-- **Custom Prompts**: Feeling creative? Use the "Custom" mode to write your own prompt and generate a completely unique image.
-
-- **Instant Generation**: Once you take a photo, it's sent to the Google Gemini model, which generates a new, stylized image based on your chosen mode.
-
-- **Interactive Gallery**: All your creations are saved in a gallery. View them, delete them, or select your favorites.
-
-- **Sticker Queue**: Easily save your favorite creations to a special queue, perfect for event workflows.
-
-- **Batch Download**: Download all items in your sticker queue as a single ZIP file, making it easy to transfer images for printing.
-
-- **Download & Share**: Easily download your photos or use the native share functionality on your device.
-
-- **Responsive Design**: Enjoy a seamless experience on both desktop and mobile devices.
-
-- **First-Use Tutorial**: A quick and easy tutorial guides new users through the main features.
+- **Intelligent Auto-Detect**: The default mode uses AI to decide which animal character best matches your features and aesthetic.
+- **Spirit Animal Styles**: Choose from a curated list of animal lenses (Fox, Wolf, Cat, Owl, Dragon, etc.) to guide the transformation.
+- **Holographic Foil Aesthetic**: Every sticker features a thick, iridescent silver foil border with shifting rainbow reflections.
+- **Modern Glassmorphism UI**: A sleek, futuristic interface designed with deep dark backgrounds and vibrant holographic teal/purple accents.
+- **Live Camera & Zoom**: Real-time camera feed with desktop zoom buttons and mobile pinch-to-zoom support.
+- **Interactive Photo Bar**: A compact, interactive bar for quick access to your latest results while you keep snapping.
+- **Integrated Gallery**: View all your creations in a grid, delete unwanted ones, or inspect them in high-detail.
+- **Sticker Queue & ZIP Download**: Save your favorite stickers to a queue and download them all as a single ZIP file—perfect for batch printing or sharing.
+- **Cross-Platform Utility**: Optimized for a seamless experience on both phones and computers.
 
 ## 🕹️ How to Use
-1.  **Start the App**: When you first open the app, you'll see a start screen. Click anywhere on screen when you see "PRESS START" to grant camera access and begin.
-
-2.  **Choose Your Style**: Along the bottom of the screen, you'll find a carousel of different modes. Each one represents a different video game style without stepping on toes. Select the one you like.
-
-3.  **Frame Your Shot**: Position yourself in front of the camera. Use the zoom slider on the left (or pinch on mobile) to adjust the zoom.
-
-4.  **Snap a Photo**: Click the big camera shutter button to take a picture. You'll see a flash effect on the screen.
-
-5.  **See the Magic**: Your photo is now being processed by the AI. A thumbnail will appear in the photo bar at the bottom with a shimmer effect, indicating it's busy. Once complete, the final, stylized image will replace the thumbnail.
+1.  **Initiate Sync**: Click the start screen to grant camera access and enter the sync chamber.
+2.  **Choose Your Mode**: Use the horizontal lens bar to select "Auto-Detect" or pick a specific spirit animal. You can click and drag the bar on desktop or swipe on mobile.
+3.  **Frame Your Shot**: Position yourself in the feed. Use the `+` and `-` zoom buttons on the right to frame your portrait from the chest up.
+4.  **Snap & Sync**: Click the holographic shutter button. Your photo will be sent for "Holographic Syncing."
+5.  **Collect Your Sticker**: A thumbnail will appear below. Once the sync is complete, click it to see your final holographic sticker.
 
 ### Gallery and Sticker Queue
-- **View Photos**: Click the "Gallery" button in the top-right corner to view all your creations.
+- **View Gallery**: Toggle the "Gallery" view in the header to see your full collection.
+- **Save for Sticker**: While viewing a photo, click the "Add to Queue" button (⭐) to prepare it for batch download.
+- **Batch Export**: Open the "Sticker Queue" in the gallery to download all your favorites in one irradiated ZIP file.
 
-- **Save for Sticker**: When viewing a photo, click the "Save for Sticker" button to add it to your print queue.
+## 🛠️ Technical Details
+HoloAnima is a high-performance React application built with:
+- **AI Engine**: **Google Gemini API**, specifically utilizing the latest vision-capable models to interpret your portrait and generate stylized stickers.
+- **Styling**: **Tailwind CSS** with custom glassmorphism components and holographic visual variables.
+- **State Management**: **Zustand** (with Immer) for robust, type-safe global state and UI reactivity.
+- **Typography**: **Outfit** for striking headers and **Inter** for clean, legible interface text.
+- **Asset Handling**: **JSZip** for on-the-fly archive generation and **Lucide React** for modern iconography.
 
-- **Batch Download**: In the gallery, click the "Sticker Queue" button to see all your saved images. From there, you can download them all in a single ZIP file, perfect for an efficient printing workflow.
+### API Architecture
+1. **Generative Intelligence**
+- **Google Gemini API**: Processes input images and generates the final sticker based on tailored "Holo-Prompts."
+2. **Native Web APIs**
+- **MediaDevices API**: Real-time, low-latency webcam streaming.
+- **Canvas API**: High-speed image capture and square-crop processing.
+- **Web Share API**: Native OS sharing for individual stickers.
+- **Web Storage API**: Persistent local storage for user settings and sync status.
 
-## 🛠️ How It Works (Technical Details)
-Pixel Boof is a modern frontend application that leverages the following technologies:
-- **AI Model**: The core of the application uses the Google Gemini API (gemini-2.5-flash-image model). It takes the user's photo and a text prompt as input and generates a new, stylized image.
-
-- **Frontend Framework**: Built with React for a dynamic and responsive user interface.
-
-- **State Management**: Uses Zustand for simple, efficient global state management, centralizing all application state and actions in a single store.
-
-- **Camera Access**: The app uses the browser's native WebRTC API (navigator.mediaDevices.getUserMedia) to access the webcam feed.
-
-- **Image Processing**: The HTML Canvas API is used to:
-    - Capture a still frame from the live video stream.
-    - Convert the image to a Base64-encoded JPEG to be sent to the Gemini API.
-
-- **Asynchronous Operations**: Uses p-limit to control the concurrency of API requests to the Gemini model, preventing rate-limiting issues and ensuring a smooth experience.
-
-### API Breakdown
-1. **External API**
-- **Google Gemini API (gemini-2.5-flash-image model)**: This is the main engine of the app. It's responsible for taking the user's photo and the text prompt and generating the final stylized image. The `src/lib/gemini.js` file is dedicated to communicating with this API.
-
-2. **Browser APIs**
-The app relies heavily on APIs built directly into modern web browsers:
-
-- **MediaDevices API (getUserMedia)**: Used to request access to and stream video from your webcam.
-- **Canvas API**: Used to capture, crop, and format frames from the video stream for the Gemini API.
-- **Web Share API (navigator.share)**: Powers the "Share" button on supported devices.
-- **Web Storage API (localStorage)**: Used to remember user preferences (disclaimer acceptance, tutorial dismissal).
-
-3. **Supporting External Services**
-- **Google Fonts API**: Fetches the custom pixelated font (`Press Start 2P`) for the UI's retro aesthetic.
-
-*To summarize, the app's core magic comes from one primary external API (Google Gemini), while its interactive features are powered by four key browser-native APIs.*
-
-### 📂 Project Structure
-- **index.html**: The main entry point of the application.
-
-- **index.tsx**: Mounts the React application to the DOM.
-
-- **index.css**: Global styles for the entire application.
-
-- **src/components/App.jsx**: The root component that orchestrates views and modals.
-
-- **src/components/common/**: Shared, reusable components like the `Header`.
-
-- **src/components/Camera/**: Components exclusively for the Camera View.
-
-  - `CameraView.jsx`: The main component for the camera interface.
-- **src/components/Gallery/**: Components exclusively for the Gallery View.
-
-  - `GalleryView.jsx`: The main component for displaying the photo gallery.
-
-- **src/components/modals/**: All modal dialog components (`Disclaimer`, `Tutorial`, `FocusedPhotoModal`, etc.).
-
-- **src/lib/store.js**: The central Zustand store, containing all application state and action logic.
-
-- **src/lib/gemini.js**: A dedicated module for communicating with the Google Gemini API, including retry logic and error handling.
-
-- **src/lib/modes.js**: A configuration file defining all available creative styles and their AI prompts.
-
-- **src/lib/imageData.js**: An in-memory cache for base64 image data to keep the main state performant.
+---
+*Created with focus on craftsmanship and digital iridescence.*
