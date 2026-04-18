@@ -1,0 +1,61 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--bg-surface);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-glass);
+  flex-shrink: 0;
+  z-index: 100;
+}
+
+.app-header h1 {
+  font-size: 20px;
+  background: linear-gradient(to right, #00ffc8, #bb00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+}
+
+.viewToggle {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.viewToggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-holo);
+}
+
+.viewToggle .icon {
+  font-size: 20px;
+  color: var(--accent-holo);
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 12px 16px;
+  }
+  
+  .app-header h1 {
+    font-size: 16px;
+  }
+
+  .viewToggle {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+
+  .viewToggle .icon {
+    font-size: 18px;
+  }
+}

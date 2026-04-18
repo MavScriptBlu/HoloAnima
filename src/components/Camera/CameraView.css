@@ -1,0 +1,123 @@
+.camera-view-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-deep);
+}
+
+.video {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 50;
+  animation: flashAnim 0.8s ease-out forwards;
+}
+
+@keyframes flashAnim {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.startButton {
+  position: absolute;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid var(--accent-holo);
+  color: var(--accent-holo);
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.startButton:hover {
+  background: rgba(0, 255, 200, 0.1);
+  transform: scale(1.05);
+}
+
+.startButton h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.startButton p {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+}
+
+.camera-footer {
+  padding: 12px 24px;
+  background: var(--bg-surface);
+  backdrop-filter: blur(24px);
+  border-top: 1px solid var(--border-glass);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.selectorsContainer {
+  width: 100%;
+  max-width: 600px;
+}
+
+.shutter {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--accent-holo);
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 30px rgba(0, 255, 200, 0.4);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.shutter:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 50px rgba(0, 255, 200, 0.6);
+}
+
+.shutter:active {
+  transform: scale(0.9);
+}
+
+.shutter .icon {
+  font-size: 32px;
+}
+
+@media (max-width: 768px) {
+  .camera-footer {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  
+  .shutter {
+    width: 56px;
+    height: 56px;
+  }
+}

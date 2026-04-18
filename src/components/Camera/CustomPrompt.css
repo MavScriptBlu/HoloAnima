@@ -1,0 +1,29 @@
+.custom-prompt-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.custom-prompt-container textarea {
+  width: 100%;
+  height: 80px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  resize: none;
+  transition: all 0.2s ease;
+}
+
+.custom-prompt-container textarea:focus {
+  border-color: var(--accent-holo);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.custom-prompt-container textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}

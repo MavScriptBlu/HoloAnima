@@ -1,0 +1,8 @@
+{
+  "name": "HoloAnima",
+  "description": "Transform into a stylized anthropomorphic character with a holographic aura.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": []
+}
