@@ -7,7 +7,7 @@ export default {
   auto: {
     name: 'Auto-Detect',
     emoji: '🧬',
-    prompt: 'Turn the person in the image into a cute, stylized anthropomorphic animal character in a semi‑cartoon, semi‑realistic art style. The character should have large expressive eyes, soft detailed fur, and a friendly, approachable expression. Decide what creature the person in the image resembles the most (e.g., fox, wolf, cat, owl, dragon, panda, etc.).'
+    prompt: 'Turn the person in the image into a unique, stylized anthropomorphic animal character in a semi‑cartoon, semi‑realistic art style. The character should have large expressive eyes, soft detailed fur, and a friendly, approachable expression. Decide what creature the person in the image resembles the most (e.g., fox, wolf, cat, owl, dragon, panda, etc.).'
   },
   custom: {
     name: 'Custom',
@@ -53,5 +53,10 @@ export default {
     name: 'Solar Tiger',
     emoji: '🐯',
     prompt: 'Turn the person into a stylized anthropomorphic tiger character with abstract solar markings and powerful, piercing eyes.'
-  }
+  },
+  penguin: {
+    name: 'Glacial Penguin',
+    emoji: '🐧',
+    prompt: 'Turn the person into a stylized anthropomorphic penguin character with frosted feather textures and cool, crystalline eyes.'
+  },
 }
