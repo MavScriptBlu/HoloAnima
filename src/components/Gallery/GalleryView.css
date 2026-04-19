@@ -15,9 +15,9 @@
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
-  gap: 2px;
-  padding: 0 4px 100px 4px;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 12px;
+  padding: 0 16px 100px 16px;
 }
 
 .gallery-empty {
@@ -56,8 +56,8 @@
 
 @media (max-width: 768px) {
   .gallery-grid {
-    grid-template-columns: repeat(10, 1fr);
-    gap: 1px;
-    padding: 0 2px 100px 2px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 0 12px 100px 12px;
   }
 }

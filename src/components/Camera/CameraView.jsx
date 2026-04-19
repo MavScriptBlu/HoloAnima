@@ -47,6 +47,7 @@ export default function CameraView({onPhotoClick}) {
   const [didInitVideo, setDidInitVideo] = useState(false)
   const [didJustSnap, setDidJustSnap] = useState(false)
   const [customPrompt, setCustomPrompt] = useState('')
+  const [cameraError, setCameraError] = useState(null)
 
   const videoRef = useRef(null)
   const streamRef = useRef(null)
@@ -71,13 +72,17 @@ export default function CameraView({onPhotoClick}) {
    */
   const startVideo = useCallback(async () => {
     setDidInitVideo(true)
+    setCameraError(null)
     if (streamRef.current) return
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
-        video: {width: {ideal: 1920}, height: {ideal: 1080}},
-        audio: false,
-        facingMode: {ideal: 'user'}
+        video: {
+          width: {ideal: 1920},
+          height: {ideal: 1080},
+          facingMode: 'user'
+        },
+        audio: false
       })
       streamRef.current = stream
       if (videoRef.current) {
@@ -92,6 +97,15 @@ export default function CameraView({onPhotoClick}) {
       canvas.height = squareSize
     } catch (error) {
       console.error('Failed to get user media', error)
+      let message = 'An unknown error occurred.'
+      if (error.name === 'NotAllowedError' || error.name === 'PermissionDeniedError') {
+        message = 'Camera permission denied. Please allow camera access in your browser settings and try again.'
+      } else if (error.name === 'NotFoundError' || error.name === 'DevicesNotFoundError') {
+        message = 'No camera found on this device.'
+      } else if (error.name === 'NotReadableError' || error.name === 'TrackStartError') {
+        message = 'Camera is already in use by another application.'
+      }
+      setCameraError(message)
     }
   }, [])
 
@@ -196,11 +210,20 @@ export default function CameraView({onPhotoClick}) {
         {didJustSnap && <div className="flash" />}
         {!videoActive && (
           <button
-            className="startButton"
+            className={`startButton ${cameraError ? 'hasError' : ''}`}
             onClick={() => setDidInitVideo(true)}
+            disabled={didInitVideo && !cameraError}
           >
             <h1>HOLOANIMA</h1>
-            <p>{didInitVideo ? 'SYNCING...' : 'INITIATE SYNC'}</p>
+            {cameraError ? (
+              <div className="error-message">
+                <span className="icon">error</span>
+                <p>{cameraError}</p>
+                <p className="retry">CLICK TO RETRY</p>
+              </div>
+            ) : (
+              <p>{didInitVideo ? 'SYNCING...' : 'INITIATE SYNC'}</p>
+            )}
           </button>
         )}
         {videoActive && <ZoomControls />}

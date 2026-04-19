@@ -68,6 +68,38 @@ video {
   opacity: 0.8;
 }
 
+.startButton.hasError {
+  border-color: #ff4444;
+  color: #ff4444;
+  max-width: 320px;
+  text-align: center;
+}
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.error-message .icon {
+  font-size: 40px;
+}
+
+.error-message p {
+  opacity: 1;
+  letter-spacing: normal;
+  line-height: 1.4;
+}
+
+.error-message .retry {
+  margin-top: 8px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-decoration: underline;
+  font-size: 12px;
+}
+
 .camera-footer {
   padding: 12px 24px;
   background: var(--bg-surface);

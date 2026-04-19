@@ -20,8 +20,8 @@ export default function GalleryView({onPhotoClick, onShowStickerQueue}) {
   const stickerQueue = useStore.useStickerQueue()
 
   return (
-    <div className="gallery">
-      <header className="galleryHeader">
+    <div className="gallery-view-container">
+      <header className="gallery-header">
         <h2>Gallery</h2>
         <div className="gallery-actions">
           {stickerQueue.length > 0 && (
@@ -37,7 +37,7 @@ export default function GalleryView({onPhotoClick, onShowStickerQueue}) {
       </header>
 
       {photos.length > 0 ? (
-        <ul>
+        <ul className="gallery-grid">
           {photos.map(photo => (
             <PhotoThumbnail
               key={photo.id}
@@ -47,7 +47,7 @@ export default function GalleryView({onPhotoClick, onShowStickerQueue}) {
           ))}
         </ul>
       ) : (
-        <div className="empty-gallery">
+        <div className="gallery-empty">
           <span className="icon">photo_library</span>
           <p>Your gallery is empty.</p>
           <p>Switch to the camera and snap some photos!</p>
