@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@google/genai": "latest",
+    "@tailwindcss/vite": "^4.2.2",
     "auto-zustand-selectors-hook": "latest",
     "gifenc": "latest",
     "immer": "latest",
@@ -19,6 +20,7 @@
     "p-limit": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "tailwindcss": "^4.2.2",
     "zustand": "latest"
   },
   "devDependencies": {

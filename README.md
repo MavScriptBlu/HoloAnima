@@ -28,22 +28,54 @@ HoloAnima is an interactive web experience that captures your portrait, analyzes
 - **Save for Sticker**: While viewing a photo, click the "Add to Queue" button (⭐) to prepare it for batch download.
 - **Batch Export**: Open the "Sticker Queue" in the gallery to download all your favorites in one irradiated ZIP file.
 
-## 🛠️ Technical Details
-HoloAnima is a high-performance React application built with:
-- **AI Engine**: **Google Gemini API**, specifically utilizing the latest vision-capable models to interpret your portrait and generate stylized stickers.
-- **Styling**: **Tailwind CSS** with custom glassmorphism components and holographic visual variables.
+## 🛠️ Technical Details & "Built With"
+HoloAnima is a high-performance React application leveraging a modern, full-stack architecture:
+- **AI Core**: **Google Gemini API** (@google/genai) for vision-based silhouette analysis and character generation.
+- **Frontend Framework**: **React 18** + **Vite** for blazing fast development and builds.
 - **State Management**: **Zustand** (with Immer) for robust, type-safe global state and UI reactivity.
-- **Typography**: **Outfit** for striking headers and **Inter** for clean, legible interface text.
-- **Asset Handling**: **JSZip** for on-the-fly archive generation and **Lucide React** for modern iconography.
+- **Styling**: **Tailwind CSS** with specialized glassmorphism filters and holographic color variables.
+- **Batch Processing**: **JSZip** for on-the-fly generation of sticker archival packs.
+- **Language**: **TypeScript** for end-to-end type safety.
+- **Deployment**: **Google Cloud Run** for scalable containerized hosting.
+- **Typography**: **Outfit** (Display) and **Inter** (UI Sans).
+- **Icons**: **Lucide React**.
 
-### API Architecture
-1. **Generative Intelligence**
-- **Google Gemini API**: Processes input images and generates the final sticker based on tailored "Holo-Prompts."
-2. **Native Web APIs**
-- **MediaDevices API**: Real-time, low-latency webcam streaming.
-- **Canvas API**: High-speed image capture and square-crop processing.
-- **Web Share API**: Native OS sharing for individual stickers.
-- **Web Storage API**: Persistent local storage for user settings and sync status.
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18.x or higher
+- A Google Gemini API Key (Get one at [Google AI Studio](https://aistudio.google.com/app/apikey))
+
+### Installation
+1.  **Clone the Repository**:
+    ```bash
+    git clone https://github.com/MavScriptBlu/HoloAnima.git
+    cd HoloAnima
+    ```
+2.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
+3.  **Configure Environment Variables**:
+    Create a `.env` file in the root directory and add your API key:
+    ```env
+    VITE_GEMINI_API_KEY=your_gemini_api_key_here
+    ```
+    *(Note: Refer to `.env.example` for the required format)*
+4.  **Run Development Server**:
+    ```bash
+    npm run dev
+    ```
+    Access the app at `http://localhost:3000`.
+
+## 📂 Project Structure
+- `/src/components`: UI components organized by feature (Camera, Gallery, Modals).
+- `/src/lib`: Core logic including state stores (Zustand), API services (Gemini), and image management.
+- `/src/styles`: Global CSS and Tailwind configuration.
+- `metadata.json`: Application permissions and metadata.
+
+## 📄 License
+This project is for educational and hackathon purposes. Feel free to remix and build upon it!
 
 ---
-*Created with focus on craftsmanship and digital iridescence.*
+*Created for AI Hackfest 2026. Built with focus on craftsmanship and digital iridescence.*
